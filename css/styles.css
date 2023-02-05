@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .grid-container{
     display: grid;
     grid-template-columns: 100%; /*allows mobile first approach to line everything up in a single column*/
@@ -8,6 +13,7 @@
 
 .header{
     grid-area: header;
+   
 }
 .nav{
     grid-area: nav;
@@ -17,9 +23,16 @@
 .main{
     grid-area: main;
     display: grid;
+    
 }
+
 .widget-container-full, .widget-container-half{
         width: 95vh; /*  THIS WILL CREATE THE CANVAS CONTAINER RESPONSIVE DUE TO USING THE USER'S VIEWPORT'S PERCENTAGE*/
+}
+.traffic-container img, .daily-container img, .mobile-container img{
+    width: 95vw;
+    margin: 0 auto;
+    
 }
 
 @media (min-width: 768px){
@@ -66,6 +79,7 @@
     }
     .traffic, .social{
         grid-column: 1 / span 2;
+        
     }
     .daily, .members, .message{
         grid-column: 1 / span 1;
