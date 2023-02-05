@@ -1,0 +1,106 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: 100%; /*allows mobile first approach to line everything up in a single column*/
+    grid-template-rows: auto; /*Because of height based rows all different, we will set the template to auto to wrap according to content*/
+    grid-template-areas: "header" "nav" "main";
+
+}
+
+.header{
+    grid-area: header;
+}
+.nav{
+    grid-area: nav;
+}
+.main{
+    grid-area: main;
+    display: grid;
+}
+.widget-container-full, .widget-container-half{
+        width: 95vh; /*  THIS WILL CREATE THE CANVAS CONTAINER RESPONSIVE DUE TO USING THE USER'S VIEWPORT'S PERCENTAGE*/
+}
+
+@media (min-width: 768px){
+    .grid-container{
+        grid-template-columns: 55px 1fr;
+        grid-template-areas: "header header"
+        "nav main";    
+    }
+    .main{
+        grid-template-columns: 50%;
+    }
+    .traffic, .social{
+        grid-column: 1 / span 2;
+    }
+    .daily, .members, .message{
+        grid-column: 1 / span 1;
+    }
+    .mobile, .activity, .settings{
+        grid-column: 2 / span 1;
+    }
+    .widget-container-full{
+        width: 90vw;
+    }
+    .widget-container-half{
+        width: 45vw;
+    }
+}
+@media (min-width: 1024px){
+    .grid-container{
+        grid-template-columns: 55px 1fr;
+        grid-template-areas: "header header"
+        "nav main";    
+    }
+    .main{
+        grid-template-columns: 50%;
+    }
+    .traffic, .social{
+        grid-column: 1 / span 2;
+    }
+    .daily, .members, .message{
+        grid-column: 1 / span 1;
+    }
+    .mobile, .activity, .settings{
+        grid-column: 2 / span 1;
+    }
+    .widget-container-full{
+        width: 90vw;
+    }
+    .widget-container-half{
+        width: 45vw;
+    }
+}
+
+
+
+.toggle{
+    -webkit-appearance: none;
+    position: relative; 
+    width: 25px;
+    height: 15px;
+    border-radius: 25px;
+    background-color: rgba(211, 211, 211, 0.745);
+    transition: background .3s;
+    outline: none;
+    cursor: pointer;
+}
+/*notice your creating a circle shape in CSS within the pseudo property after (?)*/
+.toggle::after{
+    content: ''; /* creates the shape inside toggle */
+    position: absolute; 
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    height: .75rem;
+    width: .75rem;
+    background-color: white;
+    transition: left .3s ease-out;
+}
+.toggle:checked{
+    background: limegreen;
+}
+.toggle:checked::after{
+    left: 70%;
+}
+
