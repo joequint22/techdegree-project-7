@@ -39,13 +39,22 @@
         grid-column: 2 / span 1;
     }
     .widget-container-full{
-        width: 90vw;
+        width: 89vw;
     }
     .widget-container-half{
-        width: 45vw;
+        width: 44vw;
     }
 }
 @media (min-width: 1024px){
+    .social{
+        display: grid;        
+        grid-template-columns: 32vw;
+        grid-template-rows: auto;
+        grid-auto-flow: column;
+
+    }
+    .social-container{
+    }
     .grid-container{
         grid-template-columns: 55px 1fr;
         grid-template-areas: "header header"
