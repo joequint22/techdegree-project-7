@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Nanum Gothic';
+    font-family: 'Archivo';
     text-decoration: none;
 }
 .grid-container{
@@ -14,14 +14,14 @@
 }
 .pro-pic{
     border-radius: 50%;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.507);
+    box-shadow: 0px .1px .5px rgba(0, 0, 0, 0.507);
 
 }
 .section-title{
-    width: 100vw;
-    padding: 14px 15px;
-    font-size: .9rem;
-    opacity: .7;
+    width: 42vw;
+    font-size: .8rem;
+    font-weight: 800;
+    padding: 20px 14px;
 }
 section{
     border-bottom: 1px solid lightgray;
@@ -42,16 +42,16 @@ section{
     justify-content: space-between;
     height: 60px;
     color: white; 
-    font-size: .6rem;
+    font-size: .65rem;
     padding: 10px;
 }
 .header-title{
-    font-weight: 400;
+    font-weight: 200;
     margin-top: -10px;
     align-self: center;
 }
 .title-web{
-    font-weight: 800;
+    font-weight: 400;
 }
 .bell{
     width: 15px;
@@ -94,7 +94,7 @@ header img{
 }
 .header-name{
     font-size: .7rem;
-    font-weight: 400;
+    font-weight: 300;
     margin: 0 auto;
     align-self: center;
 }
@@ -135,7 +135,8 @@ nav svg{
     width: 100vw;
 }
 .headline{
-    font-size: 1.05rem;
+    font-size: 1rem;
+    font-weight: 400;
     width: 13.5vw;
     align-self: center;
 }
@@ -166,7 +167,7 @@ nav svg{
     margin: 3px 0;
     border-radius: 5px;   
     font-size: .85rem;
-    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.37);
+    box-shadow: .1px 3px 8px rgba(0, 0, 0, 0.37);
 
 }
 .alert-mock a{
@@ -184,24 +185,22 @@ nav svg{
     justify-content: space-between;
     padding: 0px 25px;
     font-size: .9rem;
-    font-weight: 400;
+    font-weight: 300;
     text-align: center;
 }
 .traffic-nav-link{
+    display: grid;
     list-style-type: none;
     transition: color .25s ease-in-out;
-}
-
-.traffic-hover-container{
-    padding: 5px;
-    border-radius: 25%;
+    border-radius: 40%;
     transition: background .235s ease-in-out;
+    height: 30px;
+    text-align: center;
+    background: red;
 }
-.traffic-hover-container:hover{ 
-    width: auto;
-    height: auto;
-    color: whitesmoke;
-    background-color: #81c98f
+.traffic-nav-link:hover{
+    background: #81c98f;
+    color: white;
 }
 
 .traffic-container img, .daily-container img, .mobile-container img{
@@ -221,7 +220,7 @@ nav svg{
     padding-bottom: 0px;
 }
 .social-container{
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.37);
+    box-shadow: .1px 1px 5px rgba(0, 0, 0, 0.37);
     width: 90vw;
     border: 1px solid #cecece;
     height: 100px;
@@ -252,8 +251,7 @@ nav svg{
 .social-text{
     text-align: start;
     padding: 17px 70px 0 0;
-    font-weight: 800;
-    letter-spacing: .7px;
+    font-weight: 200;
     opacity: .95;
     color: #6f72bc;
     margin-left: -10px;
@@ -264,11 +262,68 @@ nav svg{
     width: 55px;
     font-size: 2.5rem;
     margin-left: -2px;
-    font-weight: 400;
+    font-weight: 200;
     color: #777777
-
-    
 }
+
+/*NEW MEMBERS*/
+.members{
+    display: grid;
+    grid-auto-flow: row;
+}
+.members-title{
+    padding-bottom: 10px;
+}
+.members-container{
+    display: grid;
+    grid-auto-flow: row;
+    justify-content: center;
+    width: 100vw;
+    height: 140px;
+    padding: 15px 0;
+}
+.members-divider{
+    width: 90vw;
+    border-bottom: 1px solid lightgray;
+    justify-self: center;
+}
+.members-container img{
+    justify-self: center;
+    margin-bottom: 5px;
+    width: 20vw;
+}
+.members-text{
+    display: grid;
+    text-align: center;
+    font-size: .77rem;
+    width: 100vw;
+    font-weight: 200;
+}
+.date{
+    justify-self: center;
+    font-weight: 300;
+    font-size: .75rem;
+    padding: 1px;
+}
+
+.members-text a{
+    color: #888ac2;
+}
+
+/*RECENT ACTIVITY*/
+.activity{
+    display: grid;
+    grid-auto-flow: row;
+    width: 100vw;
+    justify-content: center;
+}
+.activity-title{
+    width: 44vw;
+}
+.activity-text{
+    width: 80vw;
+}
+
 
 
 
