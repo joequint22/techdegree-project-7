@@ -14,6 +14,8 @@
 }
 .pro-pic{
     border-radius: 50%;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.507);
+
 }
 .section-title{
     width: 100vw;
@@ -164,6 +166,8 @@ nav svg{
     margin: 3px 0;
     border-radius: 5px;   
     font-size: .85rem;
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.37);
+
 }
 .alert-mock a{
     color: white;
@@ -217,6 +221,7 @@ nav svg{
     padding-bottom: 0px;
 }
 .social-container{
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.37);
     width: 90vw;
     border: 1px solid #cecece;
     height: 100px;
