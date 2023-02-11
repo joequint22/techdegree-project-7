@@ -76,7 +76,7 @@
 			<!--TRAFFIC CHARTS-->
 			<section class="traffic">
 				<div class="traffic-header">
-					<h3 class="section-title">TRAFFIC</h3>
+					<h3 class="traffic-title">TRAFFIC</h3>
 					
 					<ul class="traffic-nav">
 							<li class="traffic-nav-link">Hourly</li>
@@ -211,7 +211,7 @@
 						<p>
 							Victoria Chambers commented on <strong>WebApp's SEO tips</strong>
 						</p>
-						<p>4 hours ago</p>
+						<p class="activity-time">4 hours ago</plass>
 					</div>
 				</div>
 				<span class="members-divider"></span>
@@ -221,7 +221,7 @@
 						<p>
 							Dale Byrd liked the <strong>Facebook's Changes for 2021</strong>
 						</p>
-						<p>5 hours ago</p>
+						<p class="activity-time">5 hours ago</p>
 					</div>
 				</div>
 					<span class="members-divider"></span>
@@ -232,7 +232,7 @@
 							Dawn Wood commented on
 							<strong>Facebook's Changes for 2021</strong>
 						</p>
-						<p>5 hours ago</p>
+						<p class="activity-time">5 hours ago</p>
 					</div>
 				</div>
 					<span class="members-divider"></span>
@@ -240,15 +240,15 @@
 					<img class="pro-pic members-pro-pic" src="images/member-4.jpg" alt="" />
 					<div class="members-text activity-text">
 						<p>Dan Oliver posted <strong>WebApp's SEO Tips</strong></p>
-						<p>5 hours ago</p>
+						<p class="activity-time">1 day ago</p>
 					</div>
 				</div>
 			</section>
 
 			<!--MESSAGE USER-->
 			<section class="message">
-				<h3 class="section-title">MESSAGE USER</h3>
-				<form class="widget-container">
+				<h3 class="section-title msg-user-title">MESSAGE USER</h3>
+				<form class="widget-container form-container">
 					<input
 						type="text"
 						placeholder="Search for User"
@@ -267,21 +267,29 @@
 
             <!--SETTINGS-->
 			<section class="settings">
-				<h3 class="section-title">SETTINGS</h3>
-				<div class="toggle-container">
-					<input class="toggle" type="checkbox" />
-					<input class="toggle" type="checkbox" />
-				</div>
-
-				<select 
-					aria-placeholder="Select a Timezone">
-					<option disabled selected>Select a Timezone</option>
-					<option value="eastern">Eastern</option>
-				</select>
-				<div class="settings-button">
-					<button class="button-primary" id="save">SAVE</button>
-                    <button class="button-disabled" id="cancel">CANCEL</button>
-				</div>
+				<h3 class="section-title settings-title">SETTINGS</h3>
+					<div class="settings-container">
+						<div class="toggle-container toggle-1">
+							<p class="settings-text">Send Email Notifications</p>
+							<input class="toggle" type="checkbox" />
+						</div>
+						<div class="toggle-container toggle-2">
+							<p class="settings-text">Set Profile to Public</p>
+							<input class="toggle" type="checkbox" />
+						</div>
+						<select class="settings-select" aria-placeholder="Select a Timezone">
+							<option disabled selected>Select a Timezone</option>
+							<option value="eastern">Eastern</option>
+							<option value="central">Central</option>
+							<option value="western">Western</option>
+							<option value="atlantic">Atlantic</option>
+							<option value="pacific">Pacific</option>
+						</select>
+						<div class="settings-button">
+							<button class="button-primary" id="save">SAVE</button>
+							<button class="button-disabled" id="cancel">CANCEL</button>
+						</div>
+					</div>
 			</section>
 		</main>
 

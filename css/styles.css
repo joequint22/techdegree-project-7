@@ -18,10 +18,9 @@
 
 }
 .section-title{
-    width: 42vw;
     font-size: .8rem;
     font-weight: 800;
-    padding: 20px 14px;
+    padding: 15px 15px 5px;
 }
 section{
     border-bottom: 1px solid lightgray;
@@ -177,26 +176,39 @@ nav svg{
 
 
 /*TRAFFIC, DAILY, and MOBILE STYLING*/
-
+.traffic, .daily{
+height: 197px;
+}
+.mobile{
+    height: 225px;
+}
+.traffic-title{
+    font-size: .9rem;
+    padding-left: 17px;
+}
 .traffic-nav{
     display: grid;
     grid-auto-flow: column;
-    width: 100vw;
+    width: 40px;
     justify-content: space-between;
-    padding: 0px 25px;
+    justify-self: center;
+    padding-left: 13px;
     font-size: .9rem;
     font-weight: 300;
     text-align: center;
 }
 .traffic-nav-link{
-    display: grid;
+    /*f so, I would suggest changing the display on these traffic-nav-links on line 192 to flex instead of grid. Since this is targeting individual items and not a container of items, flex will make a bit more sense here. And if we set it to flex, we can utilize align-items: center;.By default, setting an element’s display to flex sets it’s flex-direction to row, and when we use align-items on a row flex-direction, it’s adjusting the y axis (vertical). So this will center the text vertically within the element (screenshot below).*/
+    display: flex;  
+    align-items: center;
     list-style-type: none;
     transition: color .25s ease-in-out;
-    border-radius: 40%;
+    border-radius: 38%;
     transition: background .235s ease-in-out;
     height: 30px;
+    margin: 5px 10px;
+    padding: 5px;
     text-align: center;
-    background: red;
 }
 .traffic-nav-link:hover{
     background: #81c98f;
@@ -205,6 +217,7 @@ nav svg{
 
 .traffic-container img, .daily-container img, .mobile-container img{
     width: 100vw;
+    height: 130px;
 }
 
 
@@ -317,12 +330,187 @@ nav svg{
     width: 100vw;
     justify-content: center;
 }
-.activity-title{
-    width: 44vw;
-}
+
 .activity-text{
     width: 80vw;
+    font-weight: 200;
 }
+.activity-time{
+    font-weight: 100;
+}
+
+
+/*MESSAGE USER STYLING*/
+
+.form-container{
+    display: grid;
+    grid-auto-flow: row;
+    justify-content: center;
+    height: 280px;
+}
+
+.form-field, .form-area{ 
+    width: 288px;
+    background-color: #f5f5f5;
+    color: #948d8db4;
+    font-size: .85rem;
+    border-radius: 5px;
+    border: 1px solid lightgray; 
+    margin: 5px;
+}
+.form-field{
+    height: 45px;
+    padding: 10px;
+}
+.form-area{
+    height: 140px;
+    padding: 10px;
+}
+.font-area:clicked{
+    border: 1px solid black;
+}
+.button-primary{
+    text-decoration: none;
+    border: none;
+    justify-self: center;
+    background-color: #7477bf;
+    color: whitesmoke;
+    border-radius: 5px;
+}
+.button-primary:hover{
+    background: #5454b8;
+}
+#send{
+    width: 288px;
+    height: 40px;
+    margin: 10px 0 15px 0;
+    transition: background .135s ease-in;
+}
+
+button{
+    font-weight: 100;
+    cursor: pointer;
+
+}
+
+/*--------------START OF SETTING STYLING------------*/
+.settings{
+    display: grid;
+    height: 320px;
+}
+.settings-title{
+    height: 40px;
+}
+.settings-container{
+    width: 288px;
+    display: grid;
+    justify-self: center;    
+    margin-top: -5px;
+}
+.toggle-container{
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+.settings-text{
+    font-size: .9rem;
+    font-weight: 300;
+    align-self: center;
+}
+
+/*TOGGLE STYLING*/
+.toggle{
+    -webkit-appearance: none;
+    position: relative; 
+    width: 90px;
+    height: 35px;
+    border-radius: 25px;
+    border: 2px solid lightgray;
+    background-color: rgba(211, 211, 211, 0.745);
+    transition: background .3s ease;
+    outline: none;
+    cursor: pointer;
+}
+/*Creates an element that is before the button elememt, that will represent the text placed within the button */
+.toggle::before{
+    content: 'OFF';
+    font-weight: 100;
+    color: rgba(105, 101, 101, 0.89);
+    position: absolute;
+    margin: 9px;
+    left: 50%;
+}
+/*Creates an element that is after the button element, that will represent the moving toggle (?)*/
+.toggle::after{
+    content: ''; /* creates the shape of the toggle circle */
+    position: absolute; 
+    top: 50%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 2px solid lightgray;
+    height: 1.25rem;
+    width: 1.25rem;
+    background-color: white;
+    transition: left .2s ease-out;
+}
+
+/*Slides the ::after toggle element to the right*/
+.toggle:checked::after{
+    left: 80%;
+}
+/*Changes the background color to purple*/
+.toggle:checked{
+    background-color: #7477bf;;
+}
+/*Changes text to "on" and moves the text to the opposite side of the toggle, and */
+.toggle:checked::before{
+    content: 'ON';
+    font-weight: 100;
+    position: absolute;
+    margin: 9px;
+    left: 0%;
+    color: white;
+}
+
+
+.settings-select{
+    border: 1px solid lightgray;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    height: 40px;
+    font-size: .9rem;
+    padding-left: 15px;
+    margin: 20px 0;
+    color: rgb(170, 170, 170);
+}
+
+.settings-button{
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;   
+
+}
+#save, #cancel{
+    width: 135px;
+    height: 45px;
+    margin: -5px 0 30px 0;
+    border: none;    
+    transition: background .135s ease-in;
+}
+#cancel{
+    border-radius: 5px;
+    color: white;
+    background-color: #999999
+}
+#save:hover{
+    background: #5454b8;
+}
+#cancel:hover{
+    background: #525252d5;
+}
+/*-------------- END OF SETTING STYLING------------*/
 
 
 
@@ -348,10 +536,10 @@ nav svg{
         grid-column: 2 / span 1;
     }
     .widget-container-full{
-        width: 89vw;
+        width: 90vw;
     }
     .widget-container-half{
-        width: 44vw;
+        width: 45vw;
     }
 }
 @media (min-width: 1024px){
@@ -390,35 +578,4 @@ nav svg{
 }
 
 
-/*TOGGLE STYLING*/
-.toggle{
-    -webkit-appearance: none;
-    position: relative; 
-    width: 25px;
-    height: 15px;
-    border-radius: 25px;
-    background-color: rgba(211, 211, 211, 0.745);
-    transition: background .3s;
-    outline: none;
-    cursor: pointer;
-}
-/*notice your creating a circle shape in CSS within the pseudo property after (?)*/
-.toggle::after{
-    content: ''; /* creates the shape inside toggle */
-    position: absolute; 
-    top: 50%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    height: .75rem;
-    width: .75rem;
-    background-color: white;
-    transition: left .3s ease-out;
-}
-.toggle:checked{
-    background: limegreen;
-}
-.toggle:checked::after{
-    left: 70%;
-}
 
