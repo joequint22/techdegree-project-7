@@ -5,17 +5,31 @@
     font-family: 'Archivo';
     text-decoration: none;
 }
+
 .grid-container{
     display: grid;
     grid-template-columns: 100%; /*allows mobile first approach to line everything up in a single column*/
     grid-template-rows: auto; /*Because of height based rows all different, we will set the template to auto to wrap according to content*/
     grid-template-areas: "header" "nav" "main";
-
 }
+.main{
+    grid-template-columns: 100%; /*allows mobile first approach to line everything up in a single column*/
+    grid-template-rows: auto; /*Because of height based rows all different, we will set the template to auto to wrap according to content*/
+    grid-template-areas: 
+        "main-header"
+        "alert"
+        "traffic"
+        "daily"
+        "mobile"
+        "social"
+        "members"
+        "activity"
+        "message"
+        "settings";
+}
+
 .pro-pic{
     border-radius: 50%;
-    box-shadow: 0px .1px .5px rgba(0, 0, 0, 0.507);
-
 }
 .section-title{
     font-size: .8rem;
@@ -34,47 +48,55 @@ section{
 
 /*HEADER STYLING*/
 .header{
+    width: 100vw;
     grid-area: header;
     background-color: rgb(116, 119, 191);
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
     justify-content: space-between;
+    padding: 12px;
     height: 60px;
     color: white; 
     font-size: .65rem;
-    padding: 10px;
 }
+
 .header-title{
     font-weight: 200;
-    margin-top: -10px;
     align-self: center;
 }
 .title-web{
     font-weight: 400;
 }
+.right-side-header{
+    display: grid;
+    grid-auto-flow: column;
+    justify-items: space-between;
+    width: 180px;
+}
 .bell{
-    width: 15px;
-    align-self: center;   
+    display: flex;
+    width: auto;
+    position: relative;
+    padding-right: 12px;
+    width: 54px;
 }
 .bell-icon{
     fill: white;
     padding: 0 12px;
-    margin-left: 20px;
-    margin-top: 10px;
     width: 45px;    
-    align-self: center;
-        
+    align-self: center; 
+    position: absolute;
+    left: 30%
+}
+.bell-icon:hover{
+    cursor: pointer;
 }
 #notifications {
     background: #91f38e;
     height: 4.75px;
     width: 4.75px;
     border-radius: 50%;
-    position: relative;
-    top: -29.5px;
-    left: 31px;
-    margin-left: 20px;
- 
+    position: absolute;
+    right: 10%;
 }
 
 .header-divider{
@@ -82,20 +104,19 @@ section{
     border-radius: 25%;
     border-width: 1px;
     height: 41px;
-    margin: 0 -40px 0 40px;
-    align-self: center;
+    width: 1px; 
 
 }
 header img{
     height: 37px;
-    margin-left: 40px;
     align-self: center;
+    margin-left: 5px;
 }
 .header-name{
     font-size: .7rem;
     font-weight: 300;
-    margin: 0 auto;
     align-self: center;
+    padding-left: 5px;
 }
 
 
@@ -111,10 +132,8 @@ header img{
 
 }
 .nav-container{
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
     justify-content: space-evenly;
-    margin: 0 auto;
 }
 nav svg{
     height: 30px;
@@ -128,36 +147,34 @@ nav svg{
     display: grid;
 }
 .main-header{
+    grid-area: main-header;
     height: 50px;
     display: grid;
-    grid-auto-flow: column;
-    width: 100vw;
+    grid-template-columns: auto 1fr;
 }
 .headline{
     font-size: 1rem;
     font-weight: 400;
-    width: 13.5vw;
-    align-self: center;
 }
 .tab{
     border: 1px solid #cecece;
     background: whitesmoke;
-    grid-column: 2 / span 3 ;
+    grid-column: 2 / span 3;
 }
 
 .widget-container-full, .widget-container-half{
-        width: 100vw; /*  THIS WILL CREATE THE CANVAS CONTAINERS RESPONSIVE DUE TO USING THE USER'S VIEWPORT'S PERCENTAGE*/
-        height: 30vh;
+    display: flex;
+    align-self: center;
+    width: 95vw; /*  THIS WILL CREATE THE CANVAS CONTAINERS RESPONSIVE DUE TO USING THE USER'S VIEWPORT'S PERCENTAGE*/
 
 }
 .alert{
-    width: 100vw;
+    grid-area: alert;
     padding: 15px;
     text-align: center;
 }
 .alert-mock{
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
     justify-content: space-between;
     background: #7477bf;
     color: white;
@@ -176,75 +193,69 @@ nav svg{
 
 
 /*TRAFFIC, DAILY, and MOBILE STYLING*/
-.traffic, .daily{
-height: 197px;
+.traffic{
+    grid-area: traffic;
+}
+.daily{
+    grid-area: daily;
 }
 .mobile{
-    height: 225px;
+    grid-area: mobile;
 }
-.traffic-title{
-    font-size: .9rem;
-    padding-left: 17px;
+.traffic, .daily, .mobile{
+    display: flex;
+    flex-direction: column;
 }
+
+
 .traffic-nav{
-    display: grid;
-    grid-auto-flow: column;
-    width: 40px;
-    justify-content: space-between;
-    justify-self: center;
-    padding-left: 13px;
+    display: flex;
+    justify-content: space-evenly;
     font-size: .9rem;
     font-weight: 300;
-    text-align: center;
 }
 .traffic-nav-link{
     /*f so, I would suggest changing the display on these traffic-nav-links on line 192 to flex instead of grid. Since this is targeting individual items and not a container of items, flex will make a bit more sense here. And if we set it to flex, we can utilize align-items: center;.By default, setting an element’s display to flex sets it’s flex-direction to row, and when we use align-items on a row flex-direction, it’s adjusting the y axis (vertical). So this will center the text vertically within the element (screenshot below).*/
-    display: flex;  
     align-items: center;
     list-style-type: none;
     transition: color .25s ease-in-out;
     border-radius: 38%;
     transition: background .235s ease-in-out;
     height: 30px;
-    margin: 5px 10px;
     padding: 5px;
-    text-align: center;
 }
 .traffic-nav-link:hover{
     background: #81c98f;
     color: white;
+    cursor: pointer;
 }
 
-.traffic-container img, .daily-container img, .mobile-container img{
-    width: 100vw;
-    height: 130px;
-}
+
 
 
 
 
 /*SOCIAL STATS STYLING*/
+
 .social{
-    padding-left: 15px;
-    height: 400px;
-}
-.social h3{
-    margin-left: -15px;
-    padding-bottom: 0px;
+    width: 100vw;
+    grid-area: social;
+    display: flex;
+    flex-direction: column;
 }
 .social-container{
-    box-shadow: .1px 1px 5px rgba(0, 0, 0, 0.37);
-    width: 90vw;
+    display: flex;
+    flex-direction: row;
     border: 1px solid #cecece;
     height: 100px;
-    margin: 15px 0;
+    margin: 10px 15px;
     border-radius: 5px;
-    display: grid;
-    grid-auto-flow: column;
     background-color: whitesmoke;
+    justify-content: start;
+
 }
 .social-image{
-    width: 11vw;
+    width: 35.2px;
     align-self: center;
     margin-left: 35px;
     fill: white;
@@ -252,88 +263,85 @@ height: 197px;
 }
 .svg-background{
     background-color: #7477bf;
-    margin:-15px;
+    margin:-14.5px;
     border-radius: 50%;
-    width: 20vw;
+    width: 64px;
+    height: 64px;
     position: absolute;
-    height: 8vh;
-    align-self: center;
     z-index: -1;
 }
 
 .social-text{
-    text-align: start;
-    padding: 17px 70px 0 0;
+    align-self: center;
     font-weight: 200;
+    margin: 0 25px;
     opacity: .95;
     color: #6f72bc;
-    margin-left: -10px;
 }
 .social-number{
     color: black;
-    height: 55px;
-    width: 55px;
     font-size: 2.5rem;
-    margin-left: -2px;
     font-weight: 200;
     color: #777777
 }
 
-/*NEW MEMBERS*/
+/*NEW MEMBERS & RECENT ACTIVITIES STYLING*/
 .members{
-    display: grid;
-    grid-auto-flow: row;
+    grid-area: members;
+}.activity{
+    grid-area: activity;
 }
-.members-title{
-    padding-bottom: 10px;
+.members, .activity{
+    display: flex;
+    flex-direction: column; 
 }
-.members-container{
-    display: grid;
-    grid-auto-flow: row;
-    justify-content: center;
-    width: 100vw;
+
+.members-container, .activity-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 140px;
     padding: 15px 0;
 }
 .members-divider{
     width: 90vw;
     border-bottom: 1px solid lightgray;
-    justify-self: center;
+    align-self: center;
 }
-.members-container img{
-    justify-self: center;
+.members-container img, .activity-container img{
     margin-bottom: 5px;
-    width: 20vw;
+    width: 63.8px;
+    align-self: center;
 }
-.members-text{
-    display: grid;
+.member-photo-text-container{
+    display: flex;
+    flex-direction: column;
+}
+.activity-photo-text-container{
+    display: flex;
+    flex-direction: column;
+}
+.members-text, .activity-text{
+    display: flex;
+    flex-direction: column;
     text-align: center;
     font-size: .77rem;
-    width: 100vw;
     font-weight: 200;
 }
 .date{
-    justify-self: center;
     font-weight: 300;
     font-size: .75rem;
-    padding: 1px;
+}
+.activity-arrow{
+    display: none;
 }
 
 .members-text a{
     color: #888ac2;
 }
 
-/*RECENT ACTIVITY*/
-.activity{
-    display: grid;
-    grid-auto-flow: row;
-    width: 100vw;
-    justify-content: center;
-}
-
 .activity-text{
-    width: 80vw;
-    font-weight: 200;
+    padding: 0 30px;
 }
 .activity-time{
     font-weight: 100;
@@ -341,11 +349,14 @@ height: 197px;
 
 
 /*MESSAGE USER STYLING*/
+.message{
+    grid-area: message;
+}
 
 .form-container{
-    display: grid;
-    grid-auto-flow: row;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 280px;
 }
 
@@ -372,7 +383,6 @@ height: 197px;
 .button-primary{
     text-decoration: none;
     border: none;
-    justify-self: center;
     background-color: #7477bf;
     color: whitesmoke;
     border-radius: 5px;
@@ -386,30 +396,31 @@ height: 197px;
     margin: 10px 0 15px 0;
     transition: background .135s ease-in;
 }
-
 button{
     font-weight: 100;
     cursor: pointer;
-
 }
 
 /*--------------START OF SETTING STYLING------------*/
 .settings{
-    display: grid;
-    height: 320px;
+    grid-area: settings;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    border-bottom: none;
 }
 .settings-title{
     height: 40px;
 }
 .settings-container{
     width: 288px;
-    display: grid;
-    justify-self: center;    
-    margin-top: -5px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;    
 }
 .toggle-container{
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     padding: 15px 0;
 }
@@ -487,15 +498,15 @@ button{
 }
 
 .settings-button{
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;   
 
 }
-#save, #cancel{
+#save2, #cancel{
     width: 135px;
     height: 45px;
-    margin: -5px 0 30px 0;
+    margin-bottom: 30px;
     border: none;    
     transition: background .135s ease-in;
 }
@@ -517,58 +528,148 @@ button{
 
 
 
+
+
 @media (min-width: 768px){
     .grid-container{
+        display: grid;
         grid-template-columns: 55px 1fr;
         grid-template-areas: "header header"
         "nav main";    
     }
+   
     .main{
+        width: 95vw;
+        display: grid;
         grid-template-columns: 50%;
+        grid-template-areas: 
+        "main-header main-header" 
+        "alert alert"
+        "traffic traffic" 
+        "daily mobile" 
+        "social social" 
+        "members members"
+        "activity activity"
+        "message message" 
+        "settings settings";
     }
-    .traffic, .social{
-        grid-column: 1 / span 2;
+    .nav{
+        height: auto;
+        margin: 0;
     }
-    .daily, .members, .message{
-        grid-column: 1 / span 1;
+    .nav-container{
+        flex-direction: column;
     }
-    .mobile, .activity, .settings{
-        grid-column: 2 / span 1;
+    .nav-container a{
+        padding: 10px 0;
     }
-    .widget-container-full{
-        width: 90vw;
+    .alert{
+        width: 93vw;
+        padding-bottom: 5px;
     }
-    .widget-container-half{
-        width: 45vw;
-    }
-}
-@media (min-width: 1024px){
-    .social{
-        display: grid;        
-        grid-template-columns: 32vw;
-        grid-template-rows: auto;
+    .traffic-header{
+        width: 93vw;
+        display: grid;
         grid-auto-flow: column;
+        justify-content: space-between;
+    }
+    .traffic-nav{
+        padding: 10px 15px;        
+        justify-content: end;
+    }
+    .traffic-nav-link{
+        margin: 0 5px;
+    }
+    .mobile, .daily{
+        border-left: 1px solid lightgray ;
+    }       
 
+
+    .social{
+        justify-self: center;
+        border-bottom: 1px solid lightgray
+    }
+    .social-wrapper{
+        width: 93vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 10px;
+        margin-bottom: 10px;
+    }
+
+    /*once taking the margin away within the mobile first approach, set a fixed width to the svg, itself so you can continue with a new */
+    .social-container{
+        width: 35vw;
+        margin: 0 5px;
+    }
+
+    .social-image{
+        display: flex; /*applying flex to target the indiviual items within*/
+    }
+    .social-image svg{
+        width: 37px;
+    }
+    .social-number{
+        font-size: 2.1rem;
     }
     
-    .grid-container{
-        grid-template-columns: 55px 1fr;
-        grid-template-areas: "header header"
-        "nav main";    
+    .members-container, .activity-container{
+        display: flex;
+        flex-direction: row;
+        width: 93vw;
+        justify-content: space-between;
+        padding: 10px;
     }
-    .main{
-        grid-template-columns: 50%;
+    .members-divider{
+        align-self: start;
+        margin: 0 0 0 15px ;
     }
-    .traffic, .social{
-        grid-column: 1 / span 2;
-        
+    .member-photo-text-container{
+        flex-direction: row;
     }
-    .daily, .members, .message{
-        grid-column: 1 / span 1;
+ 
+    .activity-photo-text-container{
+        flex-direction: row;
     }
-    .mobile, .activity, .settings{
-        grid-column: 2 / span 1;
+ 
+    .members-text{
+       display: flex;
+       align-self: center;
+       text-align: start;
+       padding: 15px;
+       font-size: .9rem;
     }
+    .activity-text{
+       display: flex;
+       align-self: center;
+       text-align: start;
+       padding: 15px;
+       font-size: .9rem;
+    }
+    .date{
+        font-size: .9rem;
+    }
+
+    .activity-arrow{
+        display: block;
+    }
+
+    .form-field, .form-area, #send{
+        width: 90vw;
+    }
+
+    .settings-container{
+        align-self: start;
+        margin-left: 12px;
+    }
+    .settings-select, .settings-button{
+        width: 90vw;
+    }
+    #save2, #cancel{
+        width: 44vw;
+    }
+
     .widget-container-full{
         width: 90vw;
     }
@@ -577,5 +678,142 @@ button{
     }
 }
 
+@media (min-width: 1024px){
+    .grid-container{
+        display: grid;
+        grid-template-columns: 55px 1fr;
+        grid-template-areas: "header header"
+        "nav main";    
+    }
+    .main{
+        width: 90vw;
+        display: grid;
+        grid-template-columns: 50%;
+        grid-template-areas: 
+        "main-header main-header" 
+        "alert alert"
+        "traffic traffic" 
+        "daily mobile" 
+        "social social" 
+        "members activity"
+        "messages settings";
+    }
+    .nav{
+        height: auto;
+    }
+    .nav-container{
+        flex-direction: column;
+    }
+    .nav-container a{
+        padding: 10px 0;
+    }
+    .alert{
+        width: 93vw;
+        padding-bottom: 5px;
+    }
+    .traffic-header{
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-between;
+        width: 90vw;
+    }
+    .traffic-nav{
+        padding: 10px 15px;        
+        justify-content: end;
+    }
+    .traffic-nav-link{
+        margin: 0 5px;
+    }
+    .mobile, .daily{
+        border: 1px solid lightgray;
+        border-right: none;
 
+    }
+
+    .social{
+        width: 90vw;
+        justify-self: center;
+    }
+    .social-wrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    /*once taking the margin away within the mobile first approach, set a fixed width to the svg, itself so you can continue with a new */
+    .social-container{
+        width: 28vw;
+        margin: 0;
+    }
+
+    .social-image{
+        display: flex; /*applying flex to target the indiviual items within*/
+    }
+    .social-image svg{
+        width: 37px;
+    }
+    .social-number{
+        font-size: 2.1rem;
+    }
+    
+    .members-container, .activity-container{
+        display: flex;
+        flex-direction: row;
+        width: 90vw;
+        align-self: center;
+        justify-content: space-between;
+    }
+    .member-photo-text-container{
+        flex-direction: row;
+    }
+ 
+    .activity-photo-text-container{
+        flex-direction: row;
+    }
+ 
+    .members-text{
+       display: flex;
+       align-self: center;
+       text-align: start;
+       padding: 15px;
+       font-size: .9rem;
+    }
+    .activity-text{
+       display: flex;
+       align-self: center;
+       text-align: start;
+       padding: 15px;
+       font-size: .9rem;
+    }
+    .date{
+        font-size: .9rem;
+    }
+
+    .activity-arrow{
+        display: block;
+    }
+
+    .form-field, .form-area, #send{
+        width: 90vw;
+    }
+
+    .settings-container{
+        align-self: start;
+        margin-left: 12px;
+    }
+    .settings-select, .settings-button{
+        width: 90vw;
+    }
+    #save2, #cancel{
+        width: 44vw;
+    }
+
+    .widget-container-full{
+        width: 90vw;
+    }
+    .widget-container-half{
+        width: 45vw;
+    }
+}
 
