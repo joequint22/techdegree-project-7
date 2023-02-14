@@ -656,7 +656,7 @@ button{
     }
 
     .form-field, .form-area, #send{
-        width: 90vw;
+        width: 89vw;
         align-self: start;
         margin-left: 15px;
     }
