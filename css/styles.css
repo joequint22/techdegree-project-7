@@ -44,11 +44,15 @@ section{
     font-size: .7rem;
 }
 
+canvas{
+    width: 100%;
+    justify-self: start;
+}
 
 
 /*HEADER STYLING*/
 .header{
-    width: 100vw;
+    width: 100%;
     grid-area: header;
     background-color: rgb(116, 119, 191);
     display: flex;
@@ -85,7 +89,7 @@ section{
     width: 45px;    
     align-self: center; 
     position: absolute;
-    left: 30%
+    left: 30%;
 }
 .bell-icon:hover{
     cursor: pointer;
@@ -128,6 +132,7 @@ header img{
     float: left;
     background-color: #4d4c72;
     fill: white;
+    width: 100%;
     padding: 10px 10px 7px 10px;
 
 }
@@ -165,7 +170,7 @@ nav svg{
 .widget-container-full, .widget-container-half{
     display: flex;
     align-self: center;
-    width: 95vw; /*  THIS WILL CREATE THE CANVAS CONTAINERS RESPONSIVE DUE TO USING THE USER'S VIEWPORT'S PERCENTAGE*/
+    width: 95%; /*  THIS WILL CREATE THE CANVAS CONTAINERS RESPONSIVE DUE TO USING THE USER'S VIEWPORT'S PERCENTAGE*/
 
 }
 .alert{
@@ -238,7 +243,6 @@ nav svg{
 /*SOCIAL STATS STYLING*/
 
 .social{
-    width: 100vw;
     grid-area: social;
     display: flex;
     flex-direction: column;
@@ -304,7 +308,7 @@ nav svg{
     padding: 15px 0;
 }
 .members-divider{
-    width: 90vw;
+    width: 90%;
     border-bottom: 1px solid lightgray;
     align-self: center;
 }
@@ -403,6 +407,7 @@ button{
 
 /*--------------START OF SETTING STYLING------------*/
 .settings{
+    width: 100%;
     grid-area: settings;
     display: flex;
     height: auto;
@@ -413,7 +418,7 @@ button{
     height: 40px;
 }
 .settings-container{
-    width: 288px;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-self: center;    
@@ -431,6 +436,9 @@ button{
 }
 
 /*TOGGLE STYLING*/
+.toggle-container{
+    width: 100%;
+}
 .toggle{
     -webkit-appearance: none;
     position: relative; 
@@ -532,6 +540,7 @@ button{
 
 @media (min-width: 768px){
     .grid-container{
+        width: 100%;
         display: grid;
         grid-template-columns: 55px 1fr;
         grid-template-areas: "header header"
@@ -539,11 +548,11 @@ button{
     }
    
     .main{
-        width: 95vw;
+        width: 100%;
         display: grid;
         grid-template-columns: 50%;
         grid-template-areas: 
-        "main-header main-header" 
+        "main-header main-header"
         "alert alert"
         "traffic traffic" 
         "daily mobile" 
@@ -552,6 +561,9 @@ button{
         "activity activity"
         "message message" 
         "settings settings";
+    }
+    .main-header{
+        width: 100%;
     }
     .nav{
         height: auto;
@@ -564,11 +576,9 @@ button{
         padding: 10px 0;
     }
     .alert{
-        width: 93vw;
         padding-bottom: 5px;
     }
     .traffic-header{
-        width: 93vw;
         display: grid;
         grid-auto-flow: column;
         justify-content: space-between;
@@ -585,12 +595,10 @@ button{
     }       
 
 
-    .social{
-        justify-self: center;
+    .social{        
         border-bottom: 1px solid lightgray
     }
     .social-wrapper{
-        width: 93vw;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -599,8 +607,10 @@ button{
     }
 
     /*once taking the margin away within the mobile first approach, set a fixed width to the svg, itself so you can continue with a new */
+
+    
     .social-container{
-        width: 35vw;
+        width: 32%;
         margin: 0 5px;
     }
 
@@ -617,13 +627,12 @@ button{
     .members-container, .activity-container{
         display: flex;
         flex-direction: row;
-        width: 93vw;
         justify-content: space-between;
         padding: 10px;
     }
     .members-divider{
-        align-self: start;
-        margin: 0 0 0 15px ;
+        align-self: center;
+        width: 90%;
     }
     .member-photo-text-container{
         flex-direction: row;
@@ -656,27 +665,30 @@ button{
     }
 
     .form-field, .form-area, #send{
-        width: 89vw;
+        width: 95%;
         align-self: start;
         margin-left: 15px;
     }
-
-    .settings-container{
+    .settings{
+        width: 100%;
+    }
+    .settings-container{        
+        width: 95%;
         align-self: start;
         margin-left: 12px;
     }
     .settings-select, .settings-button{
-        width: 90vw;
+        width: 100%
     }
     #save2, #cancel{
-        width: 44vw;
+        width: 49%;
     }
 
     .widget-container-full{
-        width: 90vw;
+        width: 100%;
     }
     .widget-container-half{
-        width: 45vw;
+        width: 50%;
     }
 }
 
@@ -685,10 +697,10 @@ button{
         display: grid;
         grid-template-columns: 55px 1fr;
         grid-template-areas: "header header"
-        "nav main";    
+        "nav main";
     }
     .main{
-        width: 90vw;
+        width: 100%;
         display: grid;
         grid-template-columns: 50%;
         grid-template-areas: 
@@ -698,7 +710,7 @@ button{
         "daily mobile" 
         "social social" 
         "members activity"
-        "messages settings";
+        "message settings";
     }
     .nav{
         height: auto;
@@ -710,14 +722,15 @@ button{
         padding: 10px 0;
     }
     .alert{
-        width: 93vw;
+        width: 100%;
         padding-bottom: 5px;
     }
+
     .traffic-header{
         display: grid;
         grid-auto-flow: column;
         justify-content: space-between;
-        width: 90vw;
+        width: 100%;
     }
     .traffic-nav{
         padding: 10px 15px;        
@@ -733,7 +746,7 @@ button{
     }
 
     .social{
-        width: 90vw;
+        width: 100%;
         justify-self: center;
     }
     .social-wrapper{
@@ -745,12 +758,12 @@ button{
 
     /*once taking the margin away within the mobile first approach, set a fixed width to the svg, itself so you can continue with a new */
     .social-container{
-        width: 28vw;
+        width: 33%;
         margin: 0;
     }
 
     .social-image{
-        display: flex; /*applying flex to target the indiviual items within*/
+        display: flex; /*(applying flex to target the indiviual items within)*/
     }
     .social-image svg{
         width: 37px;
@@ -762,15 +775,17 @@ button{
     .members-container, .activity-container{
         display: flex;
         flex-direction: row;
-        width: 90vw;
+        width: 100%;
         align-self: center;
         justify-content: space-between;
     }
     .member-photo-text-container{
+        width: 100%;
         flex-direction: row;
     }
  
     .activity-photo-text-container{
+        width: 100%;
         flex-direction: row;
     }
  
@@ -795,27 +810,33 @@ button{
     .activity-arrow{
         display: block;
     }
-
-    .form-field, .form-area, #send{
-        width: 90vw;
+    .message{
+        width: 90%;
     }
 
+    .form-field, .form-area, #send{
+        width: 100%;
+    }
+    .settings, .activity{
+        border-left: 1px solid lightgray
+ 
+    }
     .settings-container{
         align-self: start;
         margin-left: 12px;
     }
     .settings-select, .settings-button{
-        width: 90vw;
+        width: 100%;
     }
     #save2, #cancel{
-        width: 44vw;
+        width: 49%;
     }
 
     .widget-container-full{
-        width: 90vw;
+        width: 100%;
     }
     .widget-container-half{
-        width: 45vw;
+        width: 50%;
     }
 }
 
