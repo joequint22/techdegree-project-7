@@ -365,7 +365,7 @@ nav svg{
 }
 
 .form-field, .form-area{ 
-    width: 288px;
+    width: 90%;
     background-color: #f5f5f5;
     color: #948d8db4;
     font-size: .85rem;
@@ -395,9 +395,9 @@ nav svg{
     background: #5454b8;
 }
 #send{
-    width: 288px;
+    width: 90%;
     height: 40px;
-    margin: 10px 0 15px 0;
+    margin: 16px 0 15px 0;
     transition: background .135s ease-in;
 }
 button{
@@ -512,7 +512,7 @@ button{
 
 }
 #save2, #cancel{
-    width: 135px;
+    width: 49%;
     height: 45px;
     margin-bottom: 30px;
     border: none;    
@@ -613,6 +613,9 @@ button{
         width: 32%;
         margin: 0 5px;
     }
+    .social-title{
+        margin-bottom: 10px;
+    }
 
     .social-image{
         display: flex; /*applying flex to target the indiviual items within*/
@@ -657,10 +660,12 @@ button{
        font-size: .9rem;
     }
     .date{
+        margin-right: 15px;
         font-size: .9rem;
     }
 
     .activity-arrow{
+        margin-right: 15px;
         display: block;
     }
 
@@ -669,6 +674,7 @@ button{
         align-self: start;
         margin-left: 15px;
     }
+    
     .settings{
         width: 100%;
     }
@@ -811,7 +817,7 @@ button{
         display: block;
     }
     .message{
-        width: 90%;
+        width: 95%;
     }
 
     .form-field, .form-area, #send{
