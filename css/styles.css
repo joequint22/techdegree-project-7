@@ -379,7 +379,7 @@ nav svg{
     padding: 10px;
 }
 .form-area{
-    height: 140px;
+    height: 135px;
     padding: 10px;
 }
 .font-area:clicked{
@@ -397,7 +397,7 @@ nav svg{
 }
 #send{
     width: 90%;
-    height: 40px;
+    height: 45px;
     margin: 16px 0 15px 0;
     transition: background .135s ease-in;
 }
@@ -512,7 +512,7 @@ button{
     justify-content: space-between;   
 
 }
-#save2, #cancel{
+#save, #cancel{
     width: 49%;
     height: 45px;
     margin-bottom: 30px;
@@ -687,7 +687,7 @@ button{
     .settings-select, .settings-button{
         width: 100%
     }
-    #save2, #cancel{
+    #save, #cancel{
         width: 49%;
     }
 
@@ -835,7 +835,7 @@ button{
     .settings-select, .settings-button{
         width: 100%;
     }
-    #save2, #cancel{
+    #save, #cancel{
         width: 49%;
     }
 

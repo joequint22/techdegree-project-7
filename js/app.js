@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', () =>{
     const alertBanner = document.getElementById('alert');
 
     alertBanner.innerHTML = 
@@ -15,8 +14,11 @@ document.addEventListener('DOMContentLoaded', () =>{
         } 
     });
 
+
     //TRAFFIC LINE GRAPH ( NOTE: the lables property will apply to the X-axis while the Y-axis is determine by the data itself (?)
     const trafficCanvas = document.getElementById('traffic-chart');
+    
+
     let trafficData = {
         labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
         dataset: [{
@@ -26,14 +28,17 @@ document.addEventListener('DOMContentLoaded', () =>{
         }]
     }
 
+    //trafficCanvas.innerHTML = `${trafficData}`;
 
-    let trafiicOption = {
+    let trafficOptions = {
+        maintainAspectRatio: false,
         backgroundColor: 'rgba(112, 104, 201, .5)', 
         fill: true, 
         ascpectRatio: 2.5,
         animation: {
             duration: 0            
         },
+        // SCALES IS EQUIVALENT TO THE Y INTERCEPT OF THE GRAPH ( IN THIS CASE IT IS ZERO )
         scales: {
             y: {
                 beginAtZero: true
@@ -48,11 +53,16 @@ document.addEventListener('DOMContentLoaded', () =>{
         }
     }
 
+    let trafficChart = new Chart(trafficCanvas, {
+        type: 'line',
+        data: trafficData,
+        options: trafficOptions
+     });
 
     const dailyCanvas = document.getElementById('daily-chart');
 
     const dailyData = {
-        labels: ['DAILY', 'HOURLY', 'WEEKING', 'MONTHLY'],
+        labels: ["S", "M", "T", "W", "T", "F", "S"],
         database: [{
             label: '# of Hits',
             data: [75, 115, 175, 125, 225, 200, 100],
@@ -61,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         }]
      };
 
-     const dailtOptions = {
+     const dailyOptions = {
         scales: {
             y: {
                 beginAtZero : true
@@ -75,16 +85,11 @@ document.addEventListener('DOMContentLoaded', () =>{
 
      }
 
-     let trafficChart = new Chart(trafficCanvas, {
-        type: 'line',
-        data: trafficData,
-        options: trafficOptions
-     });
-
+   
      const mobileCanvas = document.getElementById("mobile-chart")
 
      const  mobileData = {
-        labels: ["Desktop", "tablet", "Phones"],
+        labels: ["Desktop", "Tablet", "Phones"],
         datasets: [{
             label: '# of Users',
             data: [2000, 550, 500],
@@ -99,12 +104,12 @@ document.addEventListener('DOMContentLoaded', () =>{
      };
 
      const mobileOptions = {
-        ascpectRatio: 1.9,
+        maintainAspectRatio: false,
         plugins: {
             legend: {
                 position: 'right',
                 labels: {
-                    boxwidth: 20,
+                    boxWidth: 20,
                     fontStyle: 'bold'
                 }
             }
@@ -122,14 +127,13 @@ document.addEventListener('DOMContentLoaded', () =>{
      const send = document.getElementById("send");
      
      send.addEventListener('click', () => {
-        if (user.value === '' && message.value === "") {
+        if (user.value === '' && message.value === '') {
             alert("Please fill out user and message fields before sending");
-        } else if (user.value === "") {
+        } else if (user.value === '') {
             alert("Please fill out user field before sending");
-        } else if (message.value === "") {
+        } else if (message.value === '') {
             alert("Please fill out message field nefore sending");
         } else {
-            alert("Message successfully sent to: ${under.value}")
+            alert(`Message successfully sent to: ${under.value}`)
         }
-     })
-});
+     });
