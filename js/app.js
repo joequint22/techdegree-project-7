@@ -1,10 +1,16 @@
     const alertBanner = document.getElementById('alert');
-
+    const trafficCanvas = document.getElementById('traffic-chart');
+    const dailyCanvas = document.getElementById('daily-chart');
+    const mobileCanvas = document.getElementById("mobile-chart");
+    const user = document.getElementById('userfield');
+    const message = document.getElementById("message");
+    const send = document.getElementById("send");
+     
     alertBanner.innerHTML = 
         `<div class="alert-banner">
 	        <p><strong>Alert: </strong> You have <strong>9</strong> overdue tasks to complete</p>
 	        <p class="alert-banner-close">x</p>
-        </div>`
+        </div>`;
 
     // USING EVENT BUBBLING ON THE ALERT-BANNER CONTAINER TO DETERMINE IF THE CLOSE BUTTON IS CLICKED OR NOT, BY USING A CONDITIONAL STATEMENT. EVERY CLICK ON THE BANNER WILL BE ACKNOLEGDED BUT ONLY WHEN THEY CLICK THE CLOSE BUTTON SPECIFYING ITS CLASS WILL IT INVOKE THE EVENT LISTENER
     alertBanner.addEventListener('click', e => {
@@ -16,7 +22,6 @@
 
 
     //TRAFFIC LINE GRAPH ( NOTE: the lables property will apply to the X-axis while the Y-axis is determine by the data itself (?)
-    const trafficCanvas = document.getElementById('traffic-chart');
     
 
     let trafficData = {
@@ -24,14 +29,11 @@
         dataset: [{
             data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
             backgroundColor: 'rgba(116, 119, 191, .3)',
-            borderWidth: 1,
+            borderWidth: 2,
         }]
-    }
-
-    //trafficCanvas.innerHTML = `${trafficData}`;
+    };
 
     let trafficOptions = {
-        maintainAspectRatio: false,
         backgroundColor: 'rgba(112, 104, 201, .5)', 
         fill: true, 
         ascpectRatio: 2.5,
@@ -51,7 +53,7 @@
             display: false
             }  
         }
-    }
+    };
 
     let trafficChart = new Chart(trafficCanvas, {
         type: 'line',
@@ -59,7 +61,6 @@
         options: trafficOptions
      });
 
-    const dailyCanvas = document.getElementById('daily-chart');
 
     const dailyData = {
         labels: ["S", "M", "T", "W", "T", "F", "S"],
@@ -83,10 +84,9 @@
             }
         }
 
-     }
+     };
 
    
-     const mobileCanvas = document.getElementById("mobile-chart")
 
      const  mobileData = {
         labels: ["Desktop", "Tablet", "Phones"],
@@ -104,7 +104,7 @@
      };
 
      const mobileOptions = {
-        maintainAspectRatio: false,
+        aspectRatio: 0.9,
         plugins: {
             legend: {
                 position: 'right',
@@ -114,7 +114,7 @@
                 }
             }
         }
-     }
+     };
 
      let mobileChart = new Chart(mobileCanvas, {
         type: 'doughnut',
@@ -122,10 +122,7 @@
         options: mobileOptions
      });
 
-     const user = document.getElementById('userfield');
-     const message = document.getElementById("message");
-     const send = document.getElementById("send");
-     
+
      send.addEventListener('click', () => {
         if (user.value === '' && message.value === '') {
             alert("Please fill out user and message fields before sending");

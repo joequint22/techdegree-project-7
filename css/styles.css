@@ -81,8 +81,14 @@ canvas{
     width: auto;
     position: relative;
     padding-right: 12px;
-    width: 54px;
+    width: 54px;        
+    transition: transform .235s ease-in-out;
 }
+.bell:hover{
+    transform: scale(1.1);
+}
+
+
 .bell-icon{
     fill: white;
     padding: 0 12px;
