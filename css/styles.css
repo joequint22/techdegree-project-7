@@ -691,10 +691,10 @@ button{
     }
 
     .widget-container-full{
-        width: 90%;
+        width: 100%;
     }
     .widget-container-half{
-        width: 45%;
+        width: 100%;
     }
 }
 
@@ -842,7 +842,11 @@ button{
         width: 100%;
     }
     .widget-container-half{
-        width: 50%;
+        width: 100%;
     }
+    #mobile-users {
+       width: 50%;
+    }
+
 }
 

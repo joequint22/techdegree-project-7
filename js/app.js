@@ -1,3 +1,5 @@
+
+    
     const alertBanner = document.getElementById('alert');
     const trafficCanvas = document.getElementById('traffic-chart');
     const dailyCanvas = document.getElementById('daily-chart');
@@ -111,7 +113,7 @@
      };
 
      const mobileOptions = {
-        aspectRatio: 0.9,
+        aspectRatio: 2,
         plugins: {
             legend: {
                 position: 'right',
