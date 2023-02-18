@@ -7,7 +7,26 @@
     const user = document.getElementById('userField');
     const message = document.getElementById("message");
     const send = document.getElementById("send");
-     
+    const bell = document.querySelector(".bell-icon");
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    dropdownMenu.style.display = 'none';
+
+    bell.addEventListener('click', e => {
+        const element = e.target;
+        if(element.classList.contains('bell-icon')){
+            dropdownMenu.style.display = 'block';
+        } else if (element.classList.contains('bell-icon') && dropdownMenu.display('block'))
+            dropdownMenu.style.display = 'none';
+    });
+
+
+
+
+
+
+
+
     alertBanner.innerHTML = 
         `<div class="alert-banner">
 	        <p><strong>Alert: </strong> You have <strong>9</strong> overdue tasks to complete</p>
@@ -21,6 +40,8 @@
             alertBanner.style.display = 'none';
         } 
     });
+
+
 
 
     //TRAFFIC LINE GRAPH ( NOTE: the lables property will apply to the X-axis while the Y-axis is determine by the data itself (?)

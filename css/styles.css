@@ -82,6 +82,8 @@ canvas{
     padding-right: 12px;
     width: 54px;        
     transition: transform .235s ease-in-out;
+    z-index: 1;    
+
 }
 .bell:hover{
     transform: scale(1.1);
@@ -98,6 +100,29 @@ canvas{
 }
 .bell-icon:hover{
     cursor: pointer;
+}
+
+.dropdown-menu{
+    position: absolute;
+    top: 100%;
+    width: 175px;
+    height: auto;
+    background-color: rgb(255, 0, 0);
+    color: black;
+    z-index: 1;
+    
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    list-style-type: none;
+    padding: 5px;
+}
+.menu li{
+    transition: transform .235s ease-in-out;
+    display: inline-block;
+    margin: 5px;
 }
 #notifications {
     background: #91f38e;
@@ -130,7 +155,7 @@ header img{
 
 
 
-/*NAVIGSTION BAR STYLING*/
+/*NAVIGATION BAR STYLING*/
 
 .nav{
     grid-area: nav;
@@ -167,11 +192,30 @@ nav svg{
     font-weight: 400;
 }
 .tab{
+    display: flex;
+    justify-content: end;
     border: 1px solid #cecece;
     background: whitesmoke;
     grid-column: 2 / span 3;
 }
 
+.search-bar{
+    position: relative;
+    width: 40%;
+    margin: 10px 0;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(255, 255, 255)
+}
+
+.search-icon{
+    width: 15px;
+    position: relative;
+    left: -9%;
+}
+.search-icon:hover{
+    cursor: pointer;
+}
 .widget-container-full, .widget-container-half{
     position: relative;
     width: 95%;
@@ -578,6 +622,13 @@ button{
     .alert{
         padding-bottom: 5px;
     }
+    .search-bar{
+        width:300px;
+    }
+    .search-icon{
+        position: relative;
+        left: -3.5%;
+    }
     .traffic-header{
         display: grid;
         grid-auto-flow: column;
@@ -730,6 +781,12 @@ button{
     .alert{
         width: 100%;
         padding-bottom: 5px;
+    }
+    .search-bar{
+        width:300px;
+    }
+    .search-icon{
+        left: -2.5%;
     }
 
     .traffic-header{
