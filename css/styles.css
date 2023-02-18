@@ -81,15 +81,9 @@ canvas{
     position: relative;
     padding-right: 12px;
     width: 54px;        
-    transition: transform .235s ease-in-out;
     z-index: 1;    
 
 }
-.bell:hover{
-    transform: scale(1.1);
-}
-
-
 .bell-icon{
     fill: white;
     padding: 0 12px;
@@ -97,9 +91,12 @@ canvas{
     align-self: center; 
     position: absolute;
     left: 30%;
+    transition: transform .235s ease-in-out;
+
 }
 .bell-icon:hover{
     cursor: pointer;
+    transform: scale(1.2);
 }
 
 .dropdown-menu{

@@ -16,8 +16,7 @@
         const element = e.target;
         if(element.classList.contains('bell-icon')){
             dropdownMenu.style.display = 'block';
-        } else if (element.classList.contains('bell-icon') && dropdownMenu.display('block'))
-            dropdownMenu.style.display = 'none';
+        }
     });
 
 
