@@ -51,10 +51,10 @@ bell.addEventListener('click', () => {
     chart.update();
 };
 
-    function removeData(chart){
-    chart.data.labels.pop();
+    function removeData(chart, label, data){
+    chart.data.labels.pop(label);
     chart.data.datasets.forEach((dataset) => {
-        dataset.data.pop();
+        dataset.data.pop(data);
     });
     chart.update();
 };
@@ -245,50 +245,28 @@ bell.addEventListener('click', () => {
 //line graph event listeners 
 
     hourly.addEventListener('click', (e) => {
-        removeData(trafficChart)
-        let hourlyChart = new Chart(trafficCanvas, {
-            type: 'line',
-            data: hourlyTraffic,
-            options: trafficOptions
-        })
-        addData(hourlyChart, hourlyChart.labels, hourlyChart.datasets[0].data)
+        removeData(trafficChart, trafficChart.labels, trafficChart.datasets[0].data);
+        addData(trafficChart, hourlyTraffic.labels, hourlyTraffic.datasets[0].data)
     })
 
     daily.addEventListener('click', (e) => {
-        removeData(trafficChart)
-        let dailyChart = new Chart(trafficCanvas, {
-            type: 'line',
-            data: dailyTraffic,
-            options: trafficOptions
-        })
-        addData(dailyChart, dailyChart.labels, dailyChart.datasets[0].data)
+        removeData(trafficChart, trafficChart.labels, trafficChart.datasets[0].data);
+        addData(trafficChart, dailyTraffic.labels, dailyTraffic.datasets[0].data)
     })
     
     weekly.addEventListener('click', (e) => {
-        removeData(trafficChart)
-        let weeklyChart = new Chart(trafficCanvas, {
-            type: 'line',
-            data: weeklyTraffic,
-            options: trafficOptions
-        })
-        addData(weeklyChart, weeklyChart.labels, weeklyChart.datasets[0].data)
+        removeData(trafficChart, trafficChart.labels, trafficChart.datasets[0].data);
+        addData(trafficChart, weeklyTraffic.labels, weeklyTraffic.datasets[0].data)
     })
 
     monthly.addEventListener('click', (e) => {
-        removeData(trafficChart)
-
-        let monthlyChart = new Chart(trafficCanvas, {
-            type: 'line',
-            data: monthlyTraffic,
-            options: trafficOptions
-        })
-        addData(monthlyChart, monthlyChart.labels, monthlyChart.datasets[0].data)
+        removeData(trafficChart, trafficChart.labels, trafficChart.datasets[0].data);
+        addData(trafficChart, monthlyTraffic.labels, monthlyTraffic.datasets[0].data)
     })
-
 
         let trafficChart = new Chart(trafficCanvas, {
         type: 'line',
-        data: monthlyTraffic,
+        data: dailyTraffic,
         options: trafficOptions
     })
 
@@ -341,7 +319,7 @@ bell.addEventListener('click', () => {
             label: '# of Users',
             data: [2000, 550, 500],
             borderWidth: 1,
-            borderground: [
+            backgroundColor: [
                 '#7477bf',
                 '#78cf82',
                 '#51b6cb',
@@ -430,7 +408,7 @@ bell.addEventListener('click', () => {
         if(profile.checked){
             localStorage.setItem('toggleTwo', profile.value)
         }
-        if(timezone.checked){
+        if(timezone.selectedIndex){
             localStorage.setItem('tz', timezone.value)
         }
     })
@@ -456,7 +434,7 @@ bell.addEventListener('click', () => {
         if(profile.value === settingsToggleTwo){
             profile.checked = true;
         }
-        if(timezone.value !== ""){
+        if(timezone.selectedIndex !== ''){
             timezone.value = settingsTZ;
         }
         return;
