@@ -98,29 +98,34 @@ canvas{
     cursor: pointer;
     transform: scale(1.2);
 }
-
-.dropdown-menu{
+.bellMenu-container{
     position: absolute;
-    top: 100%;
-    width: 175px;
-    height: auto;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(255, 255, 255);
     color: black;
+    width: 43%;
+    top: 6.7%;
+    left: 55%;
+    display: none;
     z-index: 1;
-    
+    cursor: pointer; 
+    transition: 0.5s ease-in;
+    border: 1px solid rgba(0, 0, 0, 0.115);
 }
-.menu{
+
+.bellMenu li{
     display: flex;
-    flex-direction: column;
-    margin: 5px;
+    justify-content: space-between;
+    font-size: .78rem;
     list-style-type: none;
+    text-decoration: none;
     padding: 5px;
+    transition: background .235s ease-in-out;
 }
-.menu li{
-    transition: transform .235s ease-in-out;
-    display: inline-block;
-    margin: 5px;
+.bellMenu li:hover{
+    background: #91f38e;
+    color: black;
 }
+
 #notifications {
     background: #91f38e;
     height: 4.75px;
@@ -274,7 +279,6 @@ nav svg{
 }
 .traffic-nav-link:hover{
     background: #81c98f;
-    color: white;
     cursor: pointer;
 }
 
@@ -616,11 +620,24 @@ button{
     .nav-container a{
         padding: 10px 0;
     }
+    
+    .bellMenu-container{
+        width: 35%;
+        top: 6.7%;
+        left: 64%;
+    }
+
+    .bellMenu li{
+        font-size: .78rem;
+        list-style-type: none;
+        padding: 5px;
+        transition: background .235s ease-in-out;
+    }
     .alert{
         padding-bottom: 5px;
     }
     .search-bar{
-        width:300px;
+        width: 250px;
     }
     .search-icon{
         position: relative;
@@ -641,7 +658,16 @@ button{
     .mobile, .daily{
         border-left: 1px solid lightgray ;
     }       
-
+    
+    .names-list{
+        display: none;
+        background-color: white;
+        position: absolute;
+        border: solid 3px lightgray;
+        border-radius: 5px;
+        display: none;
+        z-index: 1;
+    }
 
     .social{        
         border-bottom: 1px solid lightgray
@@ -779,8 +805,20 @@ button{
         width: 100%;
         padding-bottom: 5px;
     }
+    .bellMenu-container{
+        width: 25%;
+        top: 6.7%;
+        left: 73.5%;
+    }
+
+    .bellMenu li{
+        font-size: .78rem;
+        list-style-type: none;
+        padding: 5px;
+        transition: background .235s ease-in-out;
+    }
     .search-bar{
-        width:300px;
+        width: 250px;
     }
     .search-icon{
         left: -2.5%;
