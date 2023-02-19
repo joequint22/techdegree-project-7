@@ -245,7 +245,7 @@ bell.addEventListener('click', () => {
 //line graph event listeners 
 
     hourly.addEventListener('click', (e) => {
-        remove(trafficChart)
+        removeData(trafficChart)
         let hourlyChart = new Chart(trafficCanvas, {
             type: 'line',
             data: hourlyTraffic,
@@ -255,7 +255,7 @@ bell.addEventListener('click', () => {
     })
 
     daily.addEventListener('click', (e) => {
-        remove(trafficChart)
+        removeData(trafficChart)
         let dailyChart = new Chart(trafficCanvas, {
             type: 'line',
             data: dailyTraffic,
@@ -265,7 +265,7 @@ bell.addEventListener('click', () => {
     })
     
     weekly.addEventListener('click', (e) => {
-        remove(trafficChart)
+        removeData(trafficChart)
         let weeklyChart = new Chart(trafficCanvas, {
             type: 'line',
             data: weeklyTraffic,
@@ -275,7 +275,7 @@ bell.addEventListener('click', () => {
     })
 
     monthly.addEventListener('click', (e) => {
-        remove(trafficChart)
+        removeData(trafficChart)
 
         let monthlyChart = new Chart(trafficCanvas, {
             type: 'line',
