@@ -353,7 +353,7 @@ bell.addEventListener('click', () => {
      });
 
 
-     send.addEventListener('click', () => {
+     send.addEventListener('submit', () => {
         if (user.value === '' && message.value === '') {
             e.preventDefault();
             alert("Please fill out user and message fields before sending");
@@ -407,7 +407,10 @@ bell.addEventListener('click', () => {
 
     // add to local storage
     btnSave.addEventListener('click', () =>{
-        if(emailNotification.checked){
+        localStorage.removeItem('toggleOne');
+        localStorage.removeItem('toggleTwo');
+        localStorage.removeItem('tz');
+        if(emailNotification.checked){    
             localStorage.setItem('toggleOne', emailNotification.value)
         }
         if(profile.checked){

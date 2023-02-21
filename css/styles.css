@@ -436,7 +436,7 @@ nav svg{
     border: solid 1px lightgray;
     display: none;
     z-index: 1;
-    width: 95vw;
+    width: 95%;
     margin-top: 50px;
 }
 .names-list ul li{
