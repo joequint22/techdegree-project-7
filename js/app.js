@@ -245,23 +245,28 @@ bell.addEventListener('click', () => {
 //line graph event listeners 
 
     hourly.addEventListener('click', (e) => {
-        removeData(trafficChart, trafficChart.labels, trafficChart.datasets[0].data);
-        addData(trafficChart, hourlyTraffic.labels, hourlyTraffic.datasets[0].data)
-    })
+        trafficChart.data.labels = hourlyTraffic.labels;
+        trafficChart.data.datasets[0].data = hourlyTraffic.datasets[0].data;
+        trafficChart.update();
+      });
 
     daily.addEventListener('click', (e) => {
-        removeData(trafficChart, trafficChart.labels, trafficChart.datasets[0].data);
-        addData(trafficChart, dailyTraffic.labels, dailyTraffic.datasets[0].data)
+        trafficChart.data.labels = dailyTraffic.labels;
+        trafficChart.data.datasets[0].data = dailyTraffic.datasets[0].data;
+        trafficChart.update();
     })
     
     weekly.addEventListener('click', (e) => {
-        removeData(trafficChart, trafficChart.labels, trafficChart.datasets[0].data);
-        addData(trafficChart, weeklyTraffic.labels, weeklyTraffic.datasets[0].data)
+        trafficChart.data.labels = weeklyTraffic.labels;
+        trafficChart.data.datasets[0].data = weeklyTraffic.datasets[0].data;
+        trafficChart.update();
     })
 
     monthly.addEventListener('click', (e) => {
-        removeData(trafficChart, trafficChart.labels, trafficChart.datasets[0].data);
-        addData(trafficChart, monthlyTraffic.labels, monthlyTraffic.datasets[0].data)
+        trafficChart.data.labels = monthlyTraffic.labels;
+        trafficChart.data.datasets[0].data = monthlyTraffic.datasets[0].data;
+        trafficChart.update();
+
     })
 
         let trafficChart = new Chart(trafficCanvas, {
