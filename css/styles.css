@@ -606,7 +606,8 @@ button{
         "nav main";    
     }
    
-    .daily, .mobile, .social{
+    
+    #mobile-users, #daily-chart{
         width: 100%
     }
     .main{
@@ -678,8 +679,8 @@ button{
         border-left: 1px solid lightgray ;
     }       
     
-    .mobile, .daily, .social{
-       margin-right: 0px;
+    .mobile canvas, .daily canvas{
+        width: 100%;
     }       
     
 
@@ -690,7 +691,7 @@ button{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: 0 10px;
+        padding: 0 2%;
         margin-bottom: 10px;
     }
 
