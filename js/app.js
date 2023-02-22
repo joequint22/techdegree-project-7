@@ -271,7 +271,20 @@ bell.addEventListener('click', () => {
 
         let trafficChart = new Chart(trafficCanvas, {
         type: 'line',
-        data: dailyTraffic,
+        data: {
+            labels: ["S",
+            "M",
+            "T",
+            "W",
+            "T",
+            "F",
+            "S"],
+            datasets: [{
+                data: [700, 360, 880, 420, 560, 1150, 1300],
+                backgroundColor: 'rgba(116, 119, 191, 0.3)',
+                borderWidth: 1,
+            }]
+        },
         options: trafficOptions
     })
 

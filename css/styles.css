@@ -27,7 +27,6 @@
         "message"
         "settings";
 }
-
 .pro-pic{
     border-radius: 50%;
 }
@@ -43,12 +42,9 @@ section{
     padding: 15px;
     font-size: .7rem;
 }
-
 canvas{
     width: 100%;
 }
-
-
 /*HEADER STYLING*/
 .header{
     width: 100%;
@@ -61,7 +57,6 @@ canvas{
     color: white; 
     font-size: .65rem;
 }
-
 .header-title{
     font-weight: 200;
     align-self: center;
@@ -125,7 +120,6 @@ canvas{
     background: #91f38e;
     color: black;
 }
-
 #notifications {
     background: #91f38e;
     height: 4.75px;
@@ -612,6 +606,9 @@ button{
         "nav main";    
     }
    
+    .daily, .mobile, .social{
+        width: 100%
+    }
     .main{
         width: 100%;
         display: grid;
@@ -627,6 +624,7 @@ button{
         "message message" 
         "settings settings";
     }
+ 
     .main-header{
         width: 100%;
     }
@@ -656,6 +654,7 @@ button{
     .alert{
         padding-bottom: 5px;
     }
+
     .search-bar{
         width: 250px;
     }
@@ -675,8 +674,12 @@ button{
     .traffic-nav-link{
         margin: 0 5px;
     }
-    .mobile, .daily{
+    .mobile{
         border-left: 1px solid lightgray ;
+    }       
+    
+    .mobile, .daily, .social{
+       margin-right: 0px;
     }       
     
 
@@ -711,7 +714,6 @@ button{
     .social-number{
         font-size: 2.1rem;
     }
-    
     .members-container, .activity-container{
         display: flex;
         flex-direction: row;
@@ -880,7 +882,7 @@ button{
     }
 
     .social-image{
-        display: flex; /*(applying flex to target the indiviual items within)*/
+        display: flex; /*(applying flex to target the individual items within)*/
     }
     .social-image svg{
         width: 37px;
@@ -934,11 +936,11 @@ button{
     .form-field, .form-area, #send{
         width: 100%;
     }
-}
-.names-list{
+
+    .names-list{
     margin-left: 35px;
     z-index: 1;
-    width: 45%;
+    width: 44.75%;
     margin-top: 50px;
 }
     .settings, .activity{
@@ -965,6 +967,6 @@ button{
     #mobile-users {
        width: 50%;
     }
-
 }
+
 
